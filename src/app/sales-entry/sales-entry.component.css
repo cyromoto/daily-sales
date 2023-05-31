@@ -1,0 +1,13 @@
+.card {
+    background-color: #97c713;
+    }
+.total-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      
+.total-label {
+        font-size: 48px;
+        color: green;
+      }

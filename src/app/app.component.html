@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#00393a;">
+  <a class="navbar-brand" routerLink="/sales-entry">
+    Daily Sales
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sales-entry">Enter Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sales-list">View Sales</a>
+      </li>
+    </ul>
+  </div>
+  <span class="navbar-text">
+    <img src="..\assets\gala.png.png" style="max-width: 100px; max-height: 100px;" alt="Logo">
+    
+
+  </span>
+</nav>
+<router-outlet></router-outlet>
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">St Mary's Supermarket &copy; {{ dateFormatted }}</span>
+  </div>
+</footer>

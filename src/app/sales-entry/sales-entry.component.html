@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <h4>GENERAL</h4>
+                    <div class="col-md-6">
+                      <label>Uplift:</label>
+                      <div class="input-group">
+                        <input type="number" class="form-control" id="uplift" [(ngModel)]="uplift"  name="uplift" required>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" (click)="addUplift()">+</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div *ngIf="upliftEntries.length > 0">
+                        
+                          <label *ngFor="let entry of upliftEntries;let isLast=last">{{ entry }} <span *ngIf="!isLast">+</span></label>
+                        
+                        <h6>= {{ getTotalUplift() }}</h6>
+                      </div>
+                    </div>
+                  </div>
+              <div class="form-group">
+                <label>Cash Transactions:</label>
+                <input type="number" class="form-control" id="cashTransactions" [(ngModel)]="cashTransactions" (ngModelChange)="updateTotal()" name="cashTransactions" required>
+              </div>
+              <div class="form-group">
+                <label>Pay Zone:</label>
+                <input type="number" class="form-control" id="payZone" [(ngModel)]="payZone" name="payZone" required>
+              </div>
+              <div class="form-group">
+                <label>Lotto Played:</label>
+                <input type="number" class="form-control" id="lottoPlayed" [(ngModel)]="lottoPlayed" (ngModelChange)="updateTotal()" name="lottoPlayed" required>
+              </div>
+              <div class="form-group">
+                <label>Till:</label>
+                <input type="number" class="form-control" id="till" [(ngModel)]="till" (ngModelChange)="updateTotal()" name="till" required>
+              </div>
+            </form>
+            <div class="total-container">
+                <h3 class="total-label">CT + TILL + LP = {{ total }}</h3>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <h4>ATM</h4>
+              </div>
+              <div class="form-group">
+                <label>50's:</label>
+                <input type="number" class="form-control" id="atm50s" [(ngModel)]="atm50s" name="atm50s"  required>
+              </div>
+              <div class="form-group">
+                <label>20's:</label>
+                <input type="number" class="form-control" id="atm20s" [(ngModel)]="atm20s" name="atm20s"  required>
+              </div>
+              <div class="form-group">
+                <label>Withdrawal:</label>
+                <input type="number" class="form-control" id="atmWithdrawal" [(ngModel)]="atmWithdrawal" name="atmWithdrawal"  required>
+              </div>
+              <div class="form-group">
+                <label>Out:</label>
+                <input type="number" class="form-control" id="atmOut" [(ngModel)]="atmOut" name="atmOut" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
